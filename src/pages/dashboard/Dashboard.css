@@ -8,8 +8,16 @@
 
 .Dashboard .DateInputArea {
     margin-right: var(--spacing-v-xl);
+    margin-left: var(--spacing-v-m);
 }
 
 .Dashboard .DateInputArea > :not(:last-child) {
     margin-bottom: var(--spacing-h-l);
+}
+
+.Dashboard .ChartArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 900px;
 }
