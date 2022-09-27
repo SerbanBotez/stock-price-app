@@ -45,5 +45,6 @@ module.exports = {
             }
         ],
         "import/prefer-default-export": "off",
+        "consistent-return": "off"
     }
 }

@@ -1,9 +1,9 @@
-.DateTimePickerContainer {
-    width: 250px;
+.Input {
     display: flex;
     flex-direction: column;
 }
 
-.DateTimePickerContainer > label {
+.Input > label {
     margin-bottom: var(--spacing-h-s);
 }
+

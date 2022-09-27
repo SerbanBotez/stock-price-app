@@ -1,4 +1,9 @@
-import { Chart, DateTimePicker } from "../../components";
+import {
+  LineChart,
+  DateTimePicker,
+  Input,
+  LoadingSpinner,
+} from "../../components";
 import { useDashboard } from "./useDashboard";
 import "./Dashboard.css";
 
@@ -6,16 +11,24 @@ const Dashboard = (): JSX.Element => {
   const {
     startDate,
     endDate,
+    searchQuery,
     setStartDate,
     setEndDate,
+    setSearchQuery,
     getStockValues,
-    stockData,
-    isLoading,
+    chartData,
+    isFetching,
   } = useDashboard();
 
   return (
     <div className="Dashboard">
       <div className="DateInputArea">
+        <Input
+          label="Symbol"
+          placeholder="Write a symbol"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
         <DateTimePicker
           label="Start Date"
           selectedDate={startDate}
@@ -31,7 +44,11 @@ const Dashboard = (): JSX.Element => {
         </button>
       </div>
       <div className="ChartArea">
-        <Chart />
+        {isFetching ? (
+          <LoadingSpinner />
+        ) : (
+          chartData && <LineChart chartData={chartData} />
+        )}
       </div>
     </div>
   );

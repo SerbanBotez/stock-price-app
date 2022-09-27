@@ -1,61 +1,21 @@
 import axios from "axios";
 import { APIConstants } from "../constants";
+import {
+  GetStockDataForDatetimeIntervalRequest,
+  GetStockDataForDatetimeIntervalResponse,
+  SearchSymbolsRequest,
+} from "./Types";
 
-export const getGithubData = async () => {
+export const searchSymbols = async (req: SearchSymbolsRequest) => {
   return axios
     .request({
       method: "get",
-      url: "https://api.github.com/repos/tannerlinsley/react-query",
+      url: `${APIConstants.BASE_URL}/search?q=${req.query}&token=${APIConstants.API_KEY}`,
     })
     .then((response) => {
       return response.data;
     });
 };
-
-export const getSymbols = async () => {
-  return axios
-    .request({
-      method: "get",
-      url: `${APIConstants.BASE_URL}/search?q=symbol&token=${APIConstants.API_KEY}`,
-    })
-    .then((response) => {
-      return response.data;
-    });
-};
-
-interface GetCompanyProfileBySymbolRequest {
-  symbol: string;
-}
-
-export const getCompanyProfileBySymbol = async (
-  req: GetCompanyProfileBySymbolRequest
-) => {
-  return axios
-    .request({
-      method: "get",
-      url: `${APIConstants.BASE_URL}/stock/profile2?symbol=${req.symbol}&token=${APIConstants.API_KEY}`,
-    })
-    .then((response) => {
-      return response.data;
-    });
-};
-
-interface GetStockDataForDatetimeIntervalRequest {
-  symbol: string;
-  resolution: 1 | 5 | 15 | 30 | 60 | "D" | "W" | "M";
-  from: string;
-  to: string;
-}
-
-interface GetStockDataForDatetimeIntervalResponse {
-  c: number[];
-  h: number[];
-  l: number[];
-  o: number[];
-  t: number[];
-  v: number[];
-  s: string;
-}
 
 export const getStockDataForDatetimeInterval = async (
   req: GetStockDataForDatetimeIntervalRequest
