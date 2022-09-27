@@ -1,0 +1,16 @@
+:root {
+    /* Colours */
+    --color-light-gray: #f5f5f8;
+    --color-white: #ffffff;
+
+    /* Spacing Vertical */
+    --spacing-v-s: 8px;
+    --spacing-v-m: 24px;
+    --spacing-v-l: 40px;
+    --spacing-v-xl: 80px;
+
+    /* Spacing Horizontal */
+    --spacing-h-s: 8px;
+    --spacing-h-m: 24px;
+    --spacing-h-l: 40px;
+}
