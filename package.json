@@ -9,8 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.6.1",
+    "@types/react-datetime-picker": "^3.4.1",
+    "axios": "^0.27.2",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-datetime-picker": "^4.0.1",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

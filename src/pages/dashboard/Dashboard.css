@@ -1,0 +1,15 @@
+.Dashboard {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-light-gray);
+
+}
+
+.Dashboard .DateInputArea {
+    margin-right: var(--spacing-v-xl);
+}
+
+.Dashboard .DateInputArea > :not(:last-child) {
+    margin-bottom: var(--spacing-h-l);
+}

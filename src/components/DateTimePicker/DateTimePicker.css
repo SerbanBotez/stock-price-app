@@ -1,0 +1,16 @@
+.react-date-picker__calendar--open,
+.react-date-picker__calendar--closed {
+    /*TODO remove*/
+    position: absolute;
+}
+
+
+.DateTimePickerContainer {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.DateTimePickerContainer > label {
+    margin-bottom: var(--spacing-h-s);
+}
