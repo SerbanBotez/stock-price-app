@@ -39,6 +39,11 @@ export const useDashboard = (): UseDashboardReturnData => {
         resolution: "D",
         from: moment(startDate).unix().toString(),
         to: moment(endDate).unix().toString(),
+      }).then((response) => {
+        if (response.s === "no_data") {
+          toast.error("No data could be found for this symbol and interval");
+        }
+        return response;
       }),
     { enabled: false }
   );
@@ -46,7 +51,6 @@ export const useDashboard = (): UseDashboardReturnData => {
   useEffect(() => {
     if (stockData) {
       if (stockData.s !== "ok") {
-        toast.error("No data could be found for this symbol and interval");
         setChartData(undefined);
         return;
       }
